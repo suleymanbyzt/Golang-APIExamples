@@ -5,15 +5,16 @@ import (
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"github.com/shopspring/decimal"
 	"io/ioutil"
 	"net/http"
 )
 
 type Order struct {
-	PairSymbol string  "json:'pairSymbol'"
-	OrderType  string  "json:'orderType'"
-	Quantity   float64 "json:'pairSymbol'"
-	Price      float64 "json:'price'"
+	PairSymbol string          "json:'pairSymbol'"
+	OrderType  string          "json:'orderType'"
+	Quantity   decimal.Decimal "json:'pairSymbol'"
+	Price      decimal.Decimal "json:'price'"
 }
 
 func getOrder(c echo.Context) error {
